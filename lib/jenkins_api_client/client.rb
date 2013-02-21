@@ -31,8 +31,8 @@ require 'base64'
 module JenkinsApi
   class Client
     attr_accessor :debug
-    DEFAULT_SERVER_PORT = 8080
-    VALID_PARAMS = %w(server_ip server_port jenkins_path username password debug)
+    DEFAULT_SERVER_PORT = 8080 unless const_defined?(:DEFAULT_SERVER_PORT)
+    VALID_PARAMS = %w(server_ip server_port jenkins_path username password debug) unless const_defined?(:VALID_PARAMS)
 
     # Initialize a Client object with Jenkins CI server credentials
     #
